@@ -12,10 +12,11 @@ fi
 
 #install packages
 
-sudo pacman -Syu  qemu-desktop libvirt  edk2-ovmf virt-manager ebtables dnsmasq
+sudo pacman -Syu  qemu-desktop libvirt  edk2-ovmf virt-manager ebtables dnsmasq cockpit cockpit-machines
 #starting and enabling services
 sudo systemctl enable --now libvirtd.socket
 sudo systemctl enable --now virtlogd.socket
+sudo systemctl enable --now cockpit.socket
 #disable gnome, so graphics cards don't interfere on boot
 sudo systemctl disable gdm
 #enable default network interface
