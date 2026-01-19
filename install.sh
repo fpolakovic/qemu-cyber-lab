@@ -1,3 +1,15 @@
+
+#force root
+
+if [[ $(/usr/bin/id -u) -ne 0 ]]; then
+
+echo "root is required to run this script"
+exit
+fi
+
+
+
+
 #install packages
 
 sudo pacman -Syu  qemu-desktop libvirt  edk2-ovmf virt-manager ebtables dnsmasq
